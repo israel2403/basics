@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+
+interface Character  {
+  name: string;
+  power: number;
+}
 
 @Component({
   selector: 'app-main-page',
-  templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.css']
+  templateUrl: './main-page.component.html'
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent{
 
-  constructor() { }
+  public new: Character = {
+    name: 'Trunks',
+    power: 14000
+  }
 
-  ngOnInit(): void {
+  add(){
+   console.log(this.new);
+  }
+
+  changeName(event: any){
+console.log(event);
+
   }
 
 }
