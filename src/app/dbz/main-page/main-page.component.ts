@@ -1,9 +1,6 @@
 import { Component} from '@angular/core';
+import { Character } from '../interfaces/dbz.interface';
 
-interface Character  {
-  name: string;
-  power: number;
-}
 
 @Component({
   selector: 'app-main-page',
@@ -16,13 +13,26 @@ export class MainPageComponent{
     power: 14000
   }
 
+  public characterList:Character[] = [
+    {
+      name: 'Goku',
+      power: 15000
+    },
+    {
+      name: 'Vegeta',
+      power: 7500
+    }
+  ];
+
   add(){
-   console.log(this.new);
-  }
-
-  changeName(event: any){
-console.log(event);
-
+    if (this.new.name.trim().length=== 0) {
+      return;
+    }
+    this.characterList.push(this.new);
+    this.new = {
+      name: '',
+      power: 0
+    }
   }
 
 }
