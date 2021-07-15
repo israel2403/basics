@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { Character } from '../interfaces/dbz.interface';
 
 
@@ -6,14 +6,14 @@ import { Character } from '../interfaces/dbz.interface';
   selector: 'app-main-page',
   templateUrl: './main-page.component.html'
 })
-export class MainPageComponent{
+export class MainPageComponent {
 
   public new: Character = {
-    name: 'Trunks',
-    power: 14000
+    name: 'Masetro Roshi',
+    power: 1000
   }
 
-  public characterList:Character[] = [
+  public characterList: Character[] = [
     {
       name: 'Goku',
       power: 15000
@@ -24,15 +24,7 @@ export class MainPageComponent{
     }
   ];
 
-  add(){
-    if (this.new.name.trim().length=== 0) {
-      return;
-    }
-    this.characterList.push(this.new);
-    this.new = {
-      name: '',
-      power: 0
-    }
+  addNewCharacter(character:Character) {
+    this.characterList.push(character)
   }
-
 }
