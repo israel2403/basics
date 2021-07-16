@@ -8,23 +8,11 @@ import { Character } from '../interfaces/dbz.interface';
 })
 export class MainPageComponent {
 
+  constructor() {
+   }
+
   public new: Character = {
     name: 'Masetro Roshi',
     power: 1000
-  }
-
-  public characterList: Character[] = [
-    {
-      name: 'Goku',
-      power: 15000
-    },
-    {
-      name: 'Vegeta',
-      power: 7500
-    }
-  ];
-
-  addNewCharacter(character:Character) {
-    this.characterList.push(character)
   }
 }
